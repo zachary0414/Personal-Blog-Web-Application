@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archives Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/My.css" th:href="@{/css/My.css}">
+</head>
+<body>
+<script src="/js/dynamic.js" th:href="@{/js/dynamic.js}"></script>
+
+<!--navigation-->
+<nav class="ui inverted attached segment m-padded-tb-mini" >
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">Blog</h2>
+            <a href="#" th:href="@{/}" class="item"><i class="home icon"></i>Home page</a>
+            <a href="#" th:href="@{/types/-1}" class="item"><i class="idea icon"></i>Section</a>
+            <a href="#" th:href="@{/tags/-1}" class="item"><i class="tags icon"></i>Tags</a>
+            <a href="#" th:href="@{/archives/-1}" class="active item"><i class="clone icon"></i>Archives</a>
+            <a href="#" th:href="@{/about}" class="item"><i class="info icon"></i>About me</a>
+
+            <div class="right item">
+                <form name="search" action="#" th:action="@{/search}" method="post" target="_blank">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" name="query" placeholder="Search..." th:value="${query}">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--context-->
+<div  class="m-container-small m-padded-tb-big" style="height: 800px!important;">
+    <div class="ui container">
+        <!--header-->
+        <div class="ui top attached padded segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">归档</h3>
+                </div>
+                <div class="right aligned column">
+                    Total <h2 class="ui orange header m-inline-block m-text-thin" th:text="${blogCount}"> 114 </h2> Blogs
+                </div>
+            </div>
+        </div>
+
+        <th:block th:each="item : ${archiveMap}">
+            <h3 class="ui center aligned header" th:text="${item.key}">2017</h3>
+            <div class="ui fluid vertical menu">
+                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog : ${item.value}">
+          <span>
+            <i class="mini teal circle icon"></i><span th:text="${blog.title}">关于刻意练习的清单</span>
+            <div class="ui teal basic left pointing label m-padded-mini " th:text="${#dates.format(blog.updateTime,'MMMdd')}">9月03</div>
+          </span>
+                    <div class="ui orange basic left pointing label m-padded-mini " th:text="${blog.flag}">原创</div>
+                </a>
+                <!--/*-->
+                <a href="#" target="_blank" class="item">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini ">9月03</div>
+          </span>
+                    <div class="ui orange basic left pointing label m-padded-mini ">原创</div>
+                </a>
+                <a href="#" target="_blank" class="item">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini ">9月03</div>
+          </span>
+                    <div class="ui orange basic left pointing label m-padded-mini ">原创</div>
+                </a>
+                <a href="#" target="_blank" class="item">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini ">9月03</div>
+          </span>
+                    <div class="ui orange basic left pointing label m-padded-mini ">原创</div>
+                </a>
+                <!--*/-->
+            </div>
+        </th:block>
+
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!--footer-->
+<footer class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../static/images/WeChat.jpg" th:src="@{/images/WeChat.jpg}" class="ui rounded image" style="width: 150px">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-opacity-mini">News</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">User Story</a>
+                    <a href="#" class="item">User Story</a>
+                    <a href="#" class="item">User Story</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-opacity-mini">Contact me</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Email: Zacharyxs0414@gmail.com</a>
+                    <a href="#" class="item">Github: https://github.com/zachary0414</a>
+                    <a href="#" class="item">QQ: 1040860708</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-opacity-mini">Xiyin Song</h4>
+                <p class="m-opacity-mini">This is my personal blog. I will share my.....</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-spaced m-opacity-mini">Copyright@2021 Designed by Xiyin Song</p>
+    </div>
+
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+</body>
+</html>

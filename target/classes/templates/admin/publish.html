@@ -1,0 +1,294 @@
+        <!DOCTYPE html>
+        <html lang="en" xmlns="http://www.w3.org/1999/html">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Publish page</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+            <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.css" th:href="@{/lib/editormd/css/editormd.css}">
+            <link rel="stylesheet" href="../../static/css/My.css" th:href="@{../../../css/My.css}">
+        </head>
+        <body>
+        <script src="/js/dynamic.js" th:href="@{../js/dynamic.js}"></script>
+
+        <!--navigation-->
+        <nav class="ui inverted attached segment m-padded-tb-mini" >
+            <div class="ui container">
+                <div class="ui inverted secondary stackable menu">
+                    <h2 class="ui teal header item">Backstage management</h2>
+                    <a href="#" th:href="@{/}" class="item"><i class="home icon"></i>Home page</a>
+                    <a href="#" th:href="@{/admin/types}" class="item"><i class="idea icon"></i>Section</a>
+                    <a href="#" th:href="@{/admin/blogs}"  class="item"><i class="file alternate outline icon"></i>Blogs</a>
+                    <div class="right menu">
+                        <div class="ui dropdown item">
+                            <div class="text">
+                                <img class="ui avatar image" src="http://qqpublic.qpic.cn/qq_public/0/0-3100404347-12156C2EE90EFD7E008B9872547ACE50/0?fmt=jpg&size=25&h=690&w=690&ppv=1/0">
+                                Zachary
+                            </div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a href="#" th:href="@{/admin/logout}" class="item">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="ui attached pointing menu">
+            <div class="ui container">
+                <div class="right menu">
+                    <a href="#" th:href="@{/admin/blogs/publish}" class="teal active item">Publish a new blog</a>
+                    <a href="#" th:href="@{/admin/blogs}" class="item">Blog Management</a>
+                </div>
+            </div>
+        </div>
+        <!--context-->
+        <div class="m-container-huge m-padded-tb-big">
+            <div class="ui container">
+                <form id="blog-form" action="#" th:object="${blog}" th:action="@{/admin/blogs}" method="post" class="ui form">
+                    <input type="hidden" name="published">
+                    <input type="hidden" name="id" th:value="*{id}">
+                    <div class="required field">
+                        <div class="ui left labeled input">
+                            <div class="ui selection compact green basic dropdown label">
+                                <input type="hidden" value="original" name="flag" th:value="*{flag}">
+                                <i class="dropdown icon"></i>
+                                <div class="text">original</div>
+                                <div class="menu">
+                                    <div class="item" data-value="original">original</div>
+                                    <div class="item" data-value="forward">forward</div>
+                                </div>
+                            </div>
+                            <input name="title" type="text" placeholder="Title..." th:value="*{title}">
+                        </div>
+                    </div>
+
+                    <div class="required field">
+                        <div id="md-content" style="z-index: 1 !important;">
+                            <textarea placeholder="Blog content..." name="content" style="display: none" th:text="*{content}" >Let's write something!
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="required field">
+                            <div class="ui left labeled input">
+                                <label class="ui compact teal basic label">Classification</label>
+                                <div class="ui fluid selection dropdown">
+                                    <input type="hidden" name="type.id" th:value="*{type}!=null ? *{type.id}">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Classification</div>
+                                    <div class="menu">
+                                        <div th:each="type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>
+                                        <div class="item" data-value="2">开发者手册</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="required field">
+                            <div class="ui left labeled input">
+                                <label class="ui compact teal basic label">Tags</label>
+                                <div class="ui tag fluid selection multiple search selection dropdown">
+                                    <input type="hidden" name="tagIds" th:value="*{tagIds}">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Tags</div>
+                                    <div class="menu">
+                                        <div th:each="tag : ${tags}" class="item" data-value="1" th:data-value="${tag.id}" th:text="${tag.name}">java</div>
+                                        <div th:each="tag : ${tags}" class="item" data-value="2" th:data-value="${tag.id}" th:text="${tag.name}">JavaScript</div>
+<!--                                        <div class="item" data-value="1">Java</div>-->
+<!--&lt;!&ndash;                                        P33 19分&ndash;&gt;-->
+<!--                                        <div class="item" data-value="2">Investing</div>-->
+<!--                                        <div class="item" data-value="3">Spring-boot</div>-->
+<!--                                        <div class="item" data-value="4">加</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="required field">
+                        <div class="ui left labeled input">
+                            <label class="ui teal basic label">Cover Picture</label>
+                            <input type="text" name="coverPage" th:value="*{coverPage}" placeholder="Picture link">
+                        </div>
+                    </div>
+
+                    <div class="required field">
+                        <textarea name="description" th:text="*{description}" placeholder="Blog description..." maxlength="200"></textarea>
+                    </div>
+
+                    <div class="inline fields">
+                        <div class="field">
+                            <div class="ui checked checkbox">
+                                <input type="checkbox" id="recommend" name="recommend" checked th:checked="*{recommend}" class="hidden">
+                                <label for="recommend">Recommend</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" id="shareStatement" name="shareStatement" th:checked="*{shareStatement}" class="hidden">
+                                <label for="shareStatement">Info</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" id="comment" name="comment" th:checked="*{comment}" class="hidden">
+                                <label for="comment">comment</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="demo2">
+                                <label>demo1</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="ui error message"></div>
+
+                    <div class="ui right aligned container">
+                        <button type="button" class="ui button" onclick="window.history.go(-1)">Return</button>
+                        <button type="button" id="save-btn" class="ui secondary button">Save</button>
+                        <button type="button" id="publish-btn" class="ui teal button">Publish</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!--footer-->
+        <footer class="ui inverted vertical segment m-padded-tb-massive">
+            <div class="ui center aligned container">
+                <div class="ui inverted divided grid">
+                    <div class="three wide column">
+                        <div class="ui inverted link list">
+                            <div class="item">
+                                <img src="../../static/images/WeChat.jpg" th:src="@{/images/WeChat.jpg}" class="ui rounded image" style="width: 150px">
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui inverted header m-opacity-mini">News</h4>
+                        <div class="ui inverted link list">
+                            <a href="#" class="item">User Story</a>
+                            <a href="#" class="item">User Story</a>
+                            <a href="#" class="item">User Story</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui inverted header m-opacity-mini">Contact me</h4>
+                        <div class="ui inverted link list">
+                            <a href="#" class="item">Email: Zacharyxs0414@gmail.com</a>
+                            <a href="#" class="item">Instagram: zacharyxs</a>
+                            <a href="#" class="item">QQ: 1040860708</a>
+                        </div>
+                    </div>
+                    <div class="seven wide column">
+                        <h4 class="ui inverted header m-opacity-mini">Xiyin Song</h4>
+                        <p class="m-opacity-mini">This is my personal blog. I will share my.....</p>
+                    </div>
+                </div>
+                <div class="ui inverted section divider"></div>
+                <p class="m-text-spaced m-opacity-mini">Copyright@2021 Designed by Xiyin Song</p>
+            </div>
+
+
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+
+        <script>
+            //Markdown Initialization
+            var contentEditor;
+            $(function() {
+                contentEditor = editormd("md-content", {
+                    width   : "100%",
+                    height  : 640,
+                    syncScrolling : "single",
+             //path    : "../../static/lib/"
+                    path    : "/lib/editormd/lib/"
+                });
+            });
+        </script>
+
+
+        <script>
+           $('.ui.dropdown').dropdown();
+
+           $('#save-btn').click(function(){
+               $('[name="published"]').val(false);
+               $('#blog-form').submit();
+           });
+           $('#publish-btn').click(function(){
+               $('[name="published"]').val(true);
+               $('#blog-form').submit();
+           });
+
+           $('.ui.tag.dropdown')
+                .dropdown({
+                    allowAdditions: true
+                })
+           ;
+
+        </script>
+        <script>
+            $('.ui.form').form({
+                    fields: {
+                        title : {
+                            identifier: 'title',
+                            rules: [{
+                                    type: 'empty',
+                                    prompt: 'Please enter a blog title!'
+                                }]
+                        },
+                        content : {
+                            identifier: 'content',
+                            rules: [{
+                                type: 'empty',
+                                prompt: 'Please write blog content!'
+                            }]
+                        },
+                        typeId : {
+                            identifier: 'typeId',
+                            rules: [{
+                                type: 'empty',
+                                prompt: 'Please write blog Classification!'
+                            }]
+                        },
+                        coverPage : {
+                            identifier: 'coverPage',
+                            rules: [{
+                                type: 'empty',
+                                prompt: 'Please put a link of coverPage!'
+                            }]
+                        },
+
+                        description : {
+                            identifier: 'description',
+                            rules: [{
+                                type : 'empty',
+                                prompt: 'Please write some descriptions!'
+                            }]
+                        }
+
+                    }
+            });
+        </script>
+
+
+        </body>
+        </html>

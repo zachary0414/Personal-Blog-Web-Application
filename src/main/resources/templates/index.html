@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/My.css" th:href="@{/css/My.css}">
+</head>
+<body>
+<script src="/js/dynamic.js" th:href="@{/js/dynamic.js}"></script>
+
+<!--navigation-->
+<nav class="ui inverted attached segment m-padded-tb-mini" >
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">Blog</h2>
+            <a href="#" th:href="@{/}" class="active item"><i class="home icon"></i>Home page</a>
+            <a href="#" th:href="@{/types/-1}" class="item"><i class="idea icon"></i>Section</a>
+            <a href="#" th:href="@{/tags/-1}" class="item"><i class="tags icon"></i>Tags</a>
+            <a href="#" th:href="@{/archives}" class="item"><i class="clone icon"></i>Archives</a>
+            <a href="#" th:href="@{/about}" class="item"><i class="info icon"></i>About me</a>
+
+            <div class="right item">
+                <form name="search" action="#" th:action="@{/search}" method="post" target="_blank">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" name="query" placeholder="Search..." th:value="${query}">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--context-->
+<div class="m-container m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui stackable grid">
+            <!--Left Blog List-->
+            <div class="eleven wide column">
+                <!--header-->
+                <div class="ui top attached segment">
+                    <div class="ui middle aligned two column grid">
+                        <div class="column">
+                            <h3 class="ui teal header">Blog</h3>
+                        </div>
+                        <div class="right aligned column">
+                            Total <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}">14</h2> Pages
+                        </div>
+                    </div>
+                </div>
+                <!--content https://picsum.photos/id/1005/800/450-->
+
+                <div class="ui attached segment">
+                    <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
+                        <div class="ui middle aligned mobile reversed stackable grid">
+                            <div class="eleven wide column">
+                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">How to achieve financial independence?</a></h3>
+                                <p class="m-text" th:text="|${blog.description}......|">Financial independence is achievable, but you have to follow the steps to get there. These are the 6 steps to get you on track towards financial independence.......</p>
+                                <div class="ui grid">
+                                    <div class="eleven wide column">
+                                        <div class="ui mini horizontal link list">
+                                            <div class="item">
+                                                <img src="http://qqpublic.qpic.cn/qq_public/0/0-3100404347-12156C2EE90EFD7E008B9872547ACE50/0?fmt=jpg&size=25&h=690&w=690&ppv=1/0"
+                                                     alt="" class="ui avatar image">
+                                               <div class="content"><a href="#" class="header" >Xiyin Song</a></div>
+                                            </div>
+                                            <div class="item">
+                                                <i class="calendar icon"></i>
+                                                <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-09-07</span>
+                                            </div>
+                                            <div class="item">
+                                                <i class="eye icon"></i><span th:text="${blog.views}">32</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right aligned five wide column">
+                                        <a href="#" target="_blank" class="ui mini teal basic label" th:text="${blog.type.name}">认知升级</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="five wide column">
+                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                    <img src="https://investmentu.com/wp-content/uploads/2020/07/Financial-Independence.jpg"
+                                         th:src="@{${blog.coverPage}}" alt="" class="ui rounded image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--Pagination-->
+                <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
+                    <div class="ui middle aligned two column grid">
+                        <div class="column">
+                            <a href="#" th:href="@{/(page=${page.number} - 1)}" class="ui teal button" th:unless="${page.first}">
+                                Previous</a>
+                        </div>
+                        <div class="right aligned column">
+                            <a href="#" th:href="@{/(page=${page.number} + 1)}" class="ui teal button" th:unless="${page.last}">
+                                Next</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--Right label-->
+            <div class="five wide column">
+                <!--Section-->
+                <div class="ui segments">
+                    <div class="ui secondary segment">
+                        <div class="ui two column grid">
+                            <div class="column">
+                                <i class="idea icon"></i>Section
+                            </div>
+                            <div class="right aligned column">
+                                <a href="#" target="_blank">More<i class="angle double right icon"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui teal segment">
+                        <div class="ui fluid vertical menu">
+                            <a href="#" class="item" th:each="type : ${types}">
+                                <span th:text="${type.name}">Study</span>
+                                <div class="ui teal basic left pointing label" th:text="${#arrays.length(type.blogs)}">13</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--Label-->
+                <div class="ui segments">
+                    <div class="ui secondary segment">
+                        <div class="ui two column grid">
+                            <div class="column">
+                                <i class="tags icon"></i>Label
+                            </div>
+                            <div class="right aligned column">
+                                <a href="#" target="_blank">More<i class="angle double right icon"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui teal segment">
+                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
+                          <span th:text="${tag.name}">Stock Trading</span> <div class="detail" th:text="${#arrays.length(tag.blogs)}">12</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!--Latest recommendation-->
+                <div class="ui segments">
+                    <div class="ui secondary segment">
+                        <i class="bookmark icon"></i>Latest recommendation
+                    </div>
+                    <div class="ui segment" th:each="blog : ${recommendBlogs}">
+                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">User Story</a>
+                    </div>
+                </div>
+
+                <!--QR code-->
+                <h6 class="ui horizontal divider header green">Scan and support me, thank you! ￥</h6>
+                <div class="ui centered card" style="width: 10em">
+                    <img src="../static/images/dashang.jpg" th:src="@{/images/dashang.jpg}" alt="" class="ui rounded image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--footer-->
+<footer class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../static/images/WeChat.jpg" th:src="@{/images/WeChat.jpg}" class="ui rounded image" style="width: 150px">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-opacity-mini">News</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">User Story</a>
+                    <a href="#" class="item">User Story</a>
+                    <a href="#" class="item">User Story</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-opacity-mini">Contact me</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Email: Zacharyxs0414@gmail.com</a>
+                    <a href="#" class="item">Github: https://github.com/zachary0414</a>
+                    <a href="#" class="item">QQ: 1040860708</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-opacity-mini">Xiyin Song</h4>
+                <p class="m-opacity-mini">This is my personal blog. I will share my.....</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-spaced m-opacity-mini">Copyright@2021 Designed by Xiyin Song</p>
+    </div>
+
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+</body>
+</html>

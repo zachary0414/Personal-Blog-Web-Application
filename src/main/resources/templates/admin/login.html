@@ -1,0 +1,88 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Backstage management login</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+            <link rel="stylesheet" href="../../static/css/My.css" th:href="@{../css/My.css}">
+        </head>
+        <body>
+        <script src="/js/dynamic.js" th:href="@{/js/dynamic.js}"></script>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <div class="m-container-small m-padded-tb-massive" style="max-width: 30em !important;">
+            <div class="ui container">
+                <div class="ui middle aligned center aligned grid">
+                    <div class="column">
+                        <h2 class="ui teal image header">
+                            <div class="content">
+                                Backstage Management login
+                            </div>
+                        </h2>
+                        <form class="ui large form" method="post" action="#" th:action="@{/admin/login}">
+                            <div class="ui segment">
+                                <div class="field">
+                                    <div class="ui left icon input">
+                                        <i class="user icon"></i>
+                                        <input type="text" name="username" placeholder="User name">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui left icon input">
+                                        <i class="lock icon"></i>
+                                        <input type="password" name="password" placeholder="Password">
+                                    </div>
+                                </div>
+                                <button class="ui fluid large teal submit button">Login</button>
+                            </div>
+
+                            <div class="ui error mini message"></div>
+<!--                            <div class="ui mini negative message" th:unless!="${#strings.isEmpty(#messages)}" th:text="${#messages}">-->
+<!--You may</div>-->
+                        </form>
+
+<!--  ( have mistyped your username or password.)                      <div class="ui message">-->
+<!--                            New to us? <a href="#">Sign Up</a>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+        <script>
+            $('.ui.form').form({
+                fields: {
+                    username : {
+                        identifier: 'username',
+                        rules: [{
+                            type : 'empty',
+                            prompt: 'Sorry, the username can not be empty.'
+                        }]
+                    },
+                    password : {
+                        identifier: 'password',
+                        rules: [{
+                            type : 'empty',
+                            prompt: 'Sorry, the password can not be empty.'
+                        }]
+                    }
+                }
+            })
+        </script>
+
+        </body>
+        </html>

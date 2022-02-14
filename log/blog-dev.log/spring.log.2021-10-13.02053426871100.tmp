@@ -1,0 +1,165 @@
+2021-10-13 20:05:52.690  INFO 4068 --- [restartedMain] com.BlogSpringBootApplication            : Starting BlogSpringBootApplication using Java 1.8.0_292 on DESKTOP-L8JQSNC with PID 4068 (C:\Users\zac\IdeaProjects\Blog-SpringBoot\target\classes started by zac in C:\Users\zac\IdeaProjects\Blog-SpringBoot)
+2021-10-13 20:05:52.697  INFO 4068 --- [restartedMain] com.BlogSpringBootApplication            : The following profiles are active: dev
+2021-10-13 20:05:52.751  INFO 4068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-13 20:05:52.752  INFO 4068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-13 20:05:54.671  INFO 4068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 20:05:55.792  INFO 4068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1112 ms. Found 5 JPA repository interfaces.
+2021-10-13 20:05:56.473  INFO 4068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 20:05:56.483  INFO 4068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 20:05:56.483  INFO 4068 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 20:05:56.568  INFO 4068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 20:05:56.568  INFO 4068 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3815 ms
+2021-10-13 20:05:56.615  INFO 4068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-13 20:05:57.003  INFO 4068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-13 20:05:57.009  INFO 4068 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC'
+2021-10-13 20:05:57.144  INFO 4068 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 20:05:57.567  INFO 4068 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 20:05:57.631  INFO 4068 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2021-10-13 20:05:57.692  WARN 4068 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-13 20:05:57.796  INFO 4068 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-13 20:05:57.939  INFO 4068 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-10-13 20:05:57.993  INFO 4068 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-10-13 20:05:58.660  INFO 4068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-13 20:05:58.699  INFO 4068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-10-13 20:05:58.700  INFO 4068 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-10-13 20:05:58.869  INFO 4068 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 20:05:58.877  INFO 4068 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 20:05:59.449  INFO 4068 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-10-13 20:05:59.462  INFO 4068 --- [restartedMain] com.BlogSpringBootApplication            : Started BlogSpringBootApplication in 7.17 seconds (JVM running for 8.2)
+2021-10-13 20:36:37.273  INFO 17340 --- [restartedMain] com.BlogSpringBootApplication            : Starting BlogSpringBootApplication using Java 1.8.0_292 on DESKTOP-L8JQSNC with PID 17340 (C:\Users\zac\IdeaProjects\Blog-SpringBoot\target\classes started by zac in C:\Users\zac\IdeaProjects\Blog-SpringBoot)
+2021-10-13 20:36:37.275  INFO 17340 --- [restartedMain] com.BlogSpringBootApplication            : The following profiles are active: dev
+2021-10-13 20:36:37.325  INFO 17340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-13 20:36:37.326  INFO 17340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-13 20:36:39.065  INFO 17340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 20:36:40.321  INFO 17340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1248 ms. Found 5 JPA repository interfaces.
+2021-10-13 20:36:40.984  INFO 17340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 20:36:40.992  INFO 17340 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 20:36:40.992  INFO 17340 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 20:36:41.075  INFO 17340 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 20:36:41.077  INFO 17340 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3750 ms
+2021-10-13 20:36:41.124  INFO 17340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-13 20:36:41.393  INFO 17340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-13 20:36:41.397  INFO 17340 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC'
+2021-10-13 20:36:41.476  INFO 17340 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 20:36:41.909  INFO 17340 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 20:36:41.954  INFO 17340 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2021-10-13 20:36:42.035  WARN 17340 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-13 20:36:42.068  INFO 17340 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-13 20:36:42.199  INFO 17340 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-10-13 20:36:42.351  INFO 17340 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-10-13 20:36:42.935  INFO 17340 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-13 20:36:42.973  INFO 17340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-10-13 20:36:42.975  INFO 17340 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-10-13 20:36:42.984  INFO 17340 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 20:36:42.993  INFO 17340 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 20:36:43.650  INFO 17340 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-10-13 20:36:43.656  INFO 17340 --- [restartedMain] com.BlogSpringBootApplication            : Started BlogSpringBootApplication in 6.95 seconds (JVM running for 8.006)
+2021-10-13 20:37:01.545  INFO 17340 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-13 20:37:01.545  INFO 17340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-13 20:37:01.547  INFO 17340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-10-13 20:37:01.587  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:01.715  WARN 17340 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-10-13 20:37:01.728  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : Result : {}index
+2021-10-13 20:37:01.728  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:05.906  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:05.920  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:05.920  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:09.941  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:09.950  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:09.950  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:11.224  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:11.230  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:11.230  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:11.850  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:11.858  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:11.858  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:12.331  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:12.338  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:12.338  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:12.793  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:12.800  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:12.800  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:14.444  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:14.451  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:14.452  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:15.018  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:15.023  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:15.023  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:16.132  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:16.139  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:16.140  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:17.285  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:17.291  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:17.292  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:18.367  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:18.374  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:18.375  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:19.897  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:19.903  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:19.904  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:20.961  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:20.967  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:20.967  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:23.134  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:23.244  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : Result : {}blog
+2021-10-13 20:37:23.245  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:23.492  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:23.551  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : Result : {}blog :: commentList
+2021-10-13 20:37:23.552  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:25.113  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:25.137  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : Result : {}blog
+2021-10-13 20:37:25.137  INFO 17340 --- [http-nio-8080-exec-5] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:25.272  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:25.284  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : Result : {}blog :: commentList
+2021-10-13 20:37:25.284  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:39.634  INFO 17340 --- [http-nio-8080-exec-9] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:39.645  INFO 17340 --- [http-nio-8080-exec-9] com.aspect.LogAspect                     : Result : {}index
+2021-10-13 20:37:39.646  INFO 17340 --- [http-nio-8080-exec-9] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:37:41.137  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:37:41.144  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:37:41.145  INFO 17340 --- [http-nio-8080-exec-8] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:38:20.517  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:38:20.524  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:38:20.525  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:39:01.755  INFO 17340 --- [http-nio-8080-exec-7] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:39:01.762  INFO 17340 --- [http-nio-8080-exec-7] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:39:01.762  INFO 17340 --- [http-nio-8080-exec-7] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:39:30.672  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:39:30.680  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:39:30.681  INFO 17340 --- [http-nio-8080-exec-1] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:39:57.365  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:39:57.372  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:39:57.372  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:39:58.752  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:39:58.760  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:39:58.760  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:40:00.399  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:40:00.406  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:40:00.406  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:40:01.776  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:40:01.782  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:40:01.783  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:40:04.483  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:40:04.490  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:40:04.490  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:40:05.386  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:40:05.392  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:40:05.392  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:40:07.712  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:40:07.720  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:40:07.720  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:40:09.117  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:40:09.123  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:40:09.123  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:40:11.480  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:40:11.487  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:40:11.487  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:40:12.359  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:40:12.365  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:40:12.365  INFO 17340 --- [http-nio-8080-exec-3] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:40:13.348  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:40:13.355  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : Result : {}types
+2021-10-13 20:40:13.355  INFO 17340 --- [http-nio-8080-exec-6] com.aspect.LogAspect                     : -------doAfter--------
+2021-10-13 20:42:58.382  INFO 17340 --- [http-nio-8080-exec-2] com.aspect.LogAspect                     : -------doBefore--------
+2021-10-13 20:42:58.394  INFO 17340 --- [http-nio-8080-exec-2] com.aspect.LogAspect                     : Result : {}index
+2021-10-13 20:42:58.394  INFO 17340 --- [http-nio-8080-exec-2] com.aspect.LogAspect                     : -------doAfter--------
